@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
@@ -88,4 +89,9 @@ public class BlobManager : IBlobManager
     {
         throw new NotImplementedException();
     }
+}
+
+public class BlobManager<TBlobStorageProvider> : BlobManager, IBlobManager<TBlobStorageProvider>
+    where TBlobStorageProvider : class, IBlobStorageProvider
+{
 }
