@@ -6,45 +6,91 @@ using AndreyTalanin0x00.Integrations.Blobs.Services.Abstractions;
 
 using Microsoft.Extensions.DependencyInjection;
 
+// Disable the IDE0032 (Use auto property) notification to preserve easily recognizable 'injected services' field pattern.
+#pragma warning disable IDE0032
+
 namespace AndreyTalanin0x00.Integrations.Blobs.Options.Builders;
 
-public class BlobStorageProviderOptionsBuilder<TBlobStorageProvider> : IBlobStorageProviderOptionsBuilderInternal<TBlobStorageProvider>
+internal class BlobStorageProviderOptionsBuilder<TBlobStorageProvider> : IBlobStorageProviderOptionsBuilderInternal<TBlobStorageProvider>
     where TBlobStorageProvider : class, IBlobStorageProvider
 {
-    public IServiceCollection Services => throw new NotImplementedException();
+    private readonly IServiceCollection m_services;
+    private readonly BlobStorageProviderOptions<TBlobStorageProvider> m_blobStorageProviderOptions;
 
+    public BlobStorageProviderOptionsBuilder(IServiceCollection services, BlobStorageProviderOptions<TBlobStorageProvider> blobStorageProviderOptions)
+    {
+        m_services = services;
+        m_blobStorageProviderOptions = blobStorageProviderOptions;
+    }
+
+    /// <inheritdoc />
+    public IServiceCollection Services => m_services;
+
+    /// <inheritdoc />
     public IBlobStorageProviderOptionsBuilder<TBlobStorageProvider> AddBlobBucket(string blobBucket)
     {
-        throw new NotImplementedException();
+        m_blobStorageProviderOptions.BlobBuckets.Add(blobBucket);
+
+        return this;
     }
 
-    public IBlobStorageProviderOptionsBuilder<TBlobStorageProvider> AddBlobBuckets(IEnumerable<string> blobBucket)
+    /// <inheritdoc />
+    public IBlobStorageProviderOptionsBuilder<TBlobStorageProvider> AddBlobBuckets(IEnumerable<string> blobBuckets)
     {
-        throw new NotImplementedException();
+        foreach (string blobBucket in blobBuckets)
+            AddBlobBucket(blobBucket);
+
+        return this;
     }
 
+    /// <inheritdoc />
     public IBlobStorageProviderOptionsBuilder<TBlobStorageProvider> ClearBlobBuckets()
     {
-        throw new NotImplementedException();
+        m_blobStorageProviderOptions.BlobBuckets.Clear();
+
+        return this;
     }
 
+    /// <inheritdoc />
     public IBlobStorageProviderOptionsBuilder<TBlobStorageProvider> AllowBlobOperation(BlobOperation blobOperation, bool allowed = true)
     {
-        throw new NotImplementedException();
+        m_blobStorageProviderOptions.AllowedBlobOperations.Add(blobOperation);
+
+        return this;
     }
 
+    /// <inheritdoc />
     public IBlobStorageProviderOptionsBuilder<TBlobStorageProvider> AllowBlobOperations(IEnumerable<BlobOperation> blobOperations, bool allowed = true)
     {
-        throw new NotImplementedException();
+        foreach (BlobOperation blobOperation in blobOperations)
+            AllowBlobOperation(blobOperation, allowed);
+
+        return this;
     }
 
+    /// <inheritdoc />
     public IBlobStorageProviderOptionsBuilder<TBlobStorageProvider> ClearAllowedBlobOperations()
     {
-        throw new NotImplementedException();
+        m_blobStorageProviderOptions.AllowedBlobOperations.Clear();
+
+        return this;
     }
 
+    /// <inheritdoc />
     public BlobStorageProviderOptions<TBlobStorageProvider> Build()
     {
-        throw new NotImplementedException();
+        Assert();
+
+        return m_blobStorageProviderOptions;
+    }
+
+    protected virtual void Assert()
+    {
+        if (m_blobStorageProviderOptions.BlobBuckets.Count == 0)
+            throw new InvalidOperationException("The blob storage provider's configuration is invalid: no blob buckets.");
+        if (m_blobStorageProviderOptions.AllowedBlobOperations.Count == 0)
+            throw new InvalidOperationException("The blob storage provider's configuration is invalid: no blob operation is allowed.");
+
+        return;
     }
 }
