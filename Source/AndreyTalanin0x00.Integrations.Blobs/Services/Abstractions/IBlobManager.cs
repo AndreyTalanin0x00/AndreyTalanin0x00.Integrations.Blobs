@@ -36,3 +36,8 @@ public interface IBlobManager
 
     public Task<DeleteBlobResponse> DeleteBlobAsync(DeleteBlobRequest deleteBlobRequest, CancellationToken cancellationToken = default);
 }
+
+public interface IBlobManager<TBlobStorageProvider> : IBlobManager
+    where TBlobStorageProvider : class, IBlobStorageProvider
+{
+}
