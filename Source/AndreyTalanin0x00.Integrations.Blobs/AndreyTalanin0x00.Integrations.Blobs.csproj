@@ -1,0 +1,30 @@
+<Project>
+
+  <Sdk Name="Microsoft.NET.Sdk" />
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <RootNamespace>AndreyTalanin0x00.Integrations.Blobs</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>Andrey Talanin</Authors>
+    <Description>A set of abstractions and services to add blob storage capabilities to a .NET application.</Description>
+    <RepositoryUrl>https://github.com/AndreyTalanin0x00/AndreyTalanin0x00.Integrations.Blobs.git</RepositoryUrl>
+    <Version>0.1.0-dev0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AndreyTalanin0x00.Extensions.DependencyInjection" Version="0.1.0-rc1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.1" />
+    <PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="3.0.1" />
+  </ItemGroup>
+
+</Project>
