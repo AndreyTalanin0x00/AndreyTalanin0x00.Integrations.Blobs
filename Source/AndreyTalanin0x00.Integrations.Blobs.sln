@@ -4,23 +4,23 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Packages", "1. Packages", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreyTalanin0x00.Integrations.Blobs", "AndreyTalanin0x00.Integrations.Blobs\AndreyTalanin0x00.Integrations.Blobs.csproj", "{2AC6702B-5C93-4B44-9943-8703C80F4AB7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreyTalanin0x00.Integrations.Blobs.InMemory", "AndreyTalanin0x00.Integrations.Blobs.InMemory\AndreyTalanin0x00.Integrations.Blobs.InMemory.csproj", "{1C812A03-E6AF-47A8-B46E-D4FEB6C22A05}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Class Libraries", "2. Class Libraries", "{E9B81CC8-2F72-4F14-A561-6F7C6963BBAF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Test Libraries", "3. Test Libraries", "{E075B275-8CF7-408A-B76B-DAF4625766E3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.1. Package Tests", "3.1. Package Tests", "{38BC0D44-E219-4300-9306-EE2A0CCC5E1B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.2. Class Library Tests", "3.2. Class Library Tests", "{EB5E182F-0188-47C9-84A9-21318CF2F4C5}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Solution Items", "4. Solution Items", "{8C45F6A0-DCFE-48B7-A0C8-8959CFDC2386}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreyTalanin0x00.Integrations.Blobs", "AndreyTalanin0x00.Integrations.Blobs\AndreyTalanin0x00.Integrations.Blobs.csproj", "{2AC6702B-5C93-4B44-9943-8703C80F4AB7}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreyTalanin0x00.Integrations.Blobs.InMemory", "AndreyTalanin0x00.Integrations.Blobs.InMemory\AndreyTalanin0x00.Integrations.Blobs.InMemory.csproj", "{1C812A03-E6AF-47A8-B46E-D4FEB6C22A05}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreyTalanin0x00.Integrations.Blobs.UnitTests", "Tests\AndreyTalanin0x00.Integrations.Blobs.UnitTests\AndreyTalanin0x00.Integrations.Blobs.UnitTests.csproj", "{F1340FF2-1E1F-C92B-C125-41E2A36FA55A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreyTalanin0x00.Integrations.Blobs.InMemory.UnitTests", "Tests\AndreyTalanin0x00.Integrations.Blobs.InMemory.UnitTests\AndreyTalanin0x00.Integrations.Blobs.InMemory.UnitTests.csproj", "{555E7F3D-23D6-B5F1-53EE-CFED579ECB7D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.2. Class Library Tests", "3.2. Class Library Tests", "{EB5E182F-0188-47C9-84A9-21318CF2F4C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Solution Items", "4. Solution Items", "{8C45F6A0-DCFE-48B7-A0C8-8959CFDC2386}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,7 +49,11 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{2AC6702B-5C93-4B44-9943-8703C80F4AB7} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{1C812A03-E6AF-47A8-B46E-D4FEB6C22A05} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{38BC0D44-E219-4300-9306-EE2A0CCC5E1B} = {E075B275-8CF7-408A-B76B-DAF4625766E3}
+		{F1340FF2-1E1F-C92B-C125-41E2A36FA55A} = {38BC0D44-E219-4300-9306-EE2A0CCC5E1B}
+		{555E7F3D-23D6-B5F1-53EE-CFED579ECB7D} = {38BC0D44-E219-4300-9306-EE2A0CCC5E1B}
 		{EB5E182F-0188-47C9-84A9-21318CF2F4C5} = {E075B275-8CF7-408A-B76B-DAF4625766E3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
