@@ -29,6 +29,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Solution Items", "4. Sol
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet Configuration Files", "NuGet Configuration Files", "{8505D143-1D23-4412-B0BB-F9FC7A9D97A3}"
+	ProjectSection(SolutionItems) = preProject
+		nuget.config = nuget.config
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +67,7 @@ Global
 		{F1340FF2-1E1F-C92B-C125-41E2A36FA55A} = {38BC0D44-E219-4300-9306-EE2A0CCC5E1B}
 		{555E7F3D-23D6-B5F1-53EE-CFED579ECB7D} = {38BC0D44-E219-4300-9306-EE2A0CCC5E1B}
 		{EB5E182F-0188-47C9-84A9-21318CF2F4C5} = {E075B275-8CF7-408A-B76B-DAF4625766E3}
+		{8505D143-1D23-4412-B0BB-F9FC7A9D97A3} = {8C45F6A0-DCFE-48B7-A0C8-8959CFDC2386}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CC1FB832-6D59-47D5-B354-00DF55DEF246}
